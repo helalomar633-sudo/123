@@ -10,41 +10,53 @@
     
     <style>
         /* --- التعديل الجديد الخاص بقسم نبذة عنا --- */
-        .about-img-container {
-            position: relative;
-            display: inline-block;
-            /* إضافة حشوة لظهور الإطار الخلفي */
-            padding: 15px; 
-        }
+    /* --- التعديل المطور لقسم نبذة عنا (لون متناسق وسمك دقيق) --- */
+.about-img-container {
+    position: relative;
+    display: inline-block;
+    padding: 20px; /* زيادة الحشوة قليلاً لظهور الإطار بوضوح */
+}
+
+/* الإطار الخلفي (البرتقالي) */
+.about-img-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color); /* اللون البرتقالي للخلفية */
+    border-radius: 40px; /* زوايا دائرية كبيرة */
+    z-index: 1;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-img-container img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 380px; /* حجم أصغر قليلاً لمزيد من الأناقة */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 30px; /* زوايا دائرية متناسقة */
+    
+    /* --- تغيير اللون والسمك هنا (اختر خيارك) --- */
+    border: 2px solid #FFFFFF; /* الخيار الثاني: إطار أبيض رفيع */
+    /* يمكنك استبداله بـ: border: 2px solid #D4AF37; للذهبي */
+    /* أو: border: 2px solid var(--primary-color); للأخضر */
+    /* ----------------------------------------------- */
+    
+    transition: transform 0.3s ease;
+}
+
+/* تأثير بسيط عند تمرير الماوس */
+.about-img-container:hover img {
+    transform: scale(1.02); /* حركة خفيفة جداً */
+}
+/* --- نهاية تعديل قسم نبذة عنا --- */
 
         /* الإطار الخلفي (البرتقالي) بزوايا دائرية (أقواس) */
-        .about-img-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* استخدام لون الأكسنت البرتقالي من المتغيرات */
-            background-color: var(--accent-color); 
-            /* زوايا دائرية كبيرة للإطار لتعطي شكل أقواس */
-            border-radius: 50px; 
-            z-index: 1;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .about-img-container img {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 400px; /* حجم مناسب للصورة */
-            aspect-ratio: 1 / 1; /* الحفاظ على الشكل المربع للصورة */
-            object-fit: cover;
-            /* زوايا دائرية للصورة نفسها لتتناسب مع الإطار */
-            border-radius: 40px; 
-            border: 5px solid #FFFFFF; /* إطار أبيض رفيع بين الصورة والإطار البرتقالي للفصل */
-            transition: transform 0.3s ease;
-        }
+    
 
         /* تأثير بسيط عند تمرير الماوس */
         .about-img-container:hover img {
