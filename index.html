@@ -9,6 +9,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
+        /* تحسينات الفوتر */
+       footer {
+    background-color: var(--navy-color) !important; /* استخدام لون الهوية */
+         }
+        footer h5 {
+     color: var(--accent-color); /* لون العناوين في الفوتر */
+      font-weight: bold;
+    margin-bottom: 20px;
+    }
+    footer .list-unstyled li {
+    margin-bottom: 10px;
+    }
+     footer .list-unstyled li a {
+    transition: 0.3s;
+    opacity: 0.8;
+    }
+    footer .list-unstyled li a:hover {
+    opacity: 1;
+    color: var(--primary-color) !important;
+    padding-right: 5px; /* حركة بسيطة لليمين */
+     }
+               .social-icons a {
+               display: inline-flex;
+                align-items: center;
+                justify-content: center;
+               width: 40px;
+               height: 40px;
+               background: rgba(255,255,255,0.1);
+               border-radius: 50%;
+              transition: 0.3s;
+              }
+              .social-icons a:hover {
+               background: var(--accent-color);
+               transform: translateY(-3px);
+              }
         :root {
             --primary-color: #A7D7C5;
             --accent-color: #FFB347; 
@@ -192,34 +227,49 @@
         </div>
     </section>
 
-    <footer class="bg-dark text-white pt-5 pb-3">
-        <div class="container text-center text-md-start">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5>عن المدرسة</h5>
-                    <p class="small">مدرسة متميزة تسعى لخلق بيئة تعليمية محفزة للإبداع.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>روابط سريعة</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">سياسة الخصوصية</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">الأسئلة الشائعة</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mb-4 text-center">
-                    <h5>تابعنا</h5>
-                    <div class="fs-3">
-                        <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-                    </div>
+    <footer class="text-white pt-5 pb-3">
+    <div class="container text-md-start">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h5><i class="fas fa-graduation-cap me-2"></i> اسم المدرسة</h5>
+                <p class="small text-light">مدرسة متميزة تسعى لخلق بيئة تعليمية محفزة للإبداع، نؤمن بأن التعليم هو المفتاح لبناء مستقبل مشرق لأطفالنا.</p>
+                <div class="contact-info small text-light">
+                    <p class="mb-1"><i class="fas fa-map-marker-alt text-primary me-2"></i> العنوان: المدينة، الحي، الشارع</p>
+                    <p class="mb-1"><i class="fas fa-phone text-primary me-2"></i> 966XXXXXXXX+</p>
                 </div>
             </div>
-            <hr>
-            <p class="text-center mb-0">جميع الحقوق محفوظة &copy; 2026 - اسم المدرسة</p>
-        </div>
-    </footer>
 
+            <div class="col-md-4 mb-4 text-center">
+                <h5>روابط سريعة</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#home" class="text-white text-decoration-none nav-link p-0 d-inline">الرئيسية</a></li>
+                    <li><a href="#about" class="text-white text-decoration-none nav-link p-0 d-inline">نبذة عنا</a></li>
+                    <li><a href="#admissions" class="text-white text-decoration-none nav-link p-0 d-inline">القبول والتسجيل</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 mb-4 text-center">
+                <h5>تابعنا على</h5>
+                <div class="social-icons fs-5">
+                    <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-snapchat-ghost"></i></a>
+                </div>
+                <div class="mt-4">
+                    <img src="https://i.postimg.cc/3xCKbZpQ/Gemini-Generated-Image-nl0ldenl0ldenl0l.png" alt="شعار صغير" height="40" style="filter: brightness(0) invert(1);">
+                </div>
+            </div>
+        </div>
+        <hr class="bg-light">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="small mb-0">جميع الحقوق محفوظة &copy; 2026 - <strong>اسم المدرسة</strong></p>
+            </div>
+        </div>
+    </div>
+</footer>
     <a href="https://wa.me/رقمك" class="wa-float">
         <i class="fab fa-whatsapp"></i>
     </a>
