@@ -18,6 +18,7 @@
 }
 
 /* الإطار الخلفي (البرتقالي) */
+./* الإطار الخلفي - تم تغيير اللون إلى الأزرق */
 .about-img-container::before {
     content: '';
     position: absolute;
@@ -25,8 +26,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--accent-color); /* اللون البرتقالي للخلفية */
-    border-radius: 40px; /* زوايا دائرية كبيرة */
+    /* تم التغيير هنا من var(--accent-color) إلى var(--navy-color) */
+    background-color: var(--navy-color); 
+    border-radius: 40px; 
     z-index: 1;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -172,7 +174,7 @@ footer .list-unstyled li a:hover {
         #home { display: block; } /* إظهار الرئيسية فقط */
 
         .navbar { background-color: #FFFFFF; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav-link { color: var(--navy-color) !important; font-weight: 600; }
+        ..nav-link { color: #007bff !important; font-weight: 600; }
         .btn-cta { background-color: var(--accent-color); color: white; border-radius: 25px; padding: 8px 25px; font-weight: bold; border: none; }
         .btn-cta:hover { background-color: #e6a13d; color: white; }
 
