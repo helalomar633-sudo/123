@@ -114,94 +114,51 @@
         /* --- نهاية تعديل قسم نبذة عنا --- */
         /* تحسينات الفوتر */
      /* تطوير الفوتر ليصبح أكثر احترافية */
+        /* الفوتر المصغر والمطور */
 footer {
     background: linear-gradient(135deg, var(--navy-color) 0%, #0d1a2b 100%);
     position: relative;
     overflow: hidden;
-}
-
-/* إضافة خط علوي ملون */
-footer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(to left, var(--primary-color), var(--accent-color));
+    padding-top: 25px !important; /* تقليل الحشو العلوي */
+    padding-bottom: 15px !important; /* تقليل الحشو السفلي */
 }
 
 footer h5 {
     color: var(--accent-color);
     font-weight: 700;
-    margin-bottom: 25px;
+    font-size: 1.1rem; /* تصغير حجم العنوان */
+    margin-bottom: 15px; /* تقليل المسافة تحت العنوان */
     position: relative;
 }
 
-footer h5::after {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    right: 0;
-    width: 30px;
-    height: 2px;
-    background-color: var(--primary-color);
+/* تصغير الخط للنصوص والروابط */
+footer p, footer .list-unstyled li, footer .contact-info p {
+    font-size: 0.85rem !important; 
+    margin-bottom: 8px !important;
 }
 
-footer .list-unstyled li {
-    margin-bottom: 12px;
-}
-
-footer .list-unstyled li a {
-    color: rgba(255, 255, 255, 0.8) !important;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-footer .list-unstyled li a:hover {
-    color: var(--accent-color) !important;
-    transform: translateX(-5px); /* حركة لليسار لأن الاتجاه RTL */
-    padding-right: 5px;
-}
-
+/* تصغير أيقونات التواصل الاجتماعي */
 .social-icons a {
-    width: 38px;
-    height: 38px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px; /* زوايا مستديرة ناعمة بدلاً من الدائرة الكاملة */
-    margin-left: 8px;
-    transition: 0.4s;
-    color: white;
-    text-decoration: none;
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    margin-left: 5px;
 }
 
-.social-icons a:hover {
-    background: var(--accent-color);
-    color: var(--navy-color) !important;
-    transform: translateY(-5px) rotate(8deg);
+/* تقليل المسافات في الروابط السريعة */
+footer .list-unstyled li {
+    margin-bottom: 5px;
 }
 
-.contact-info-box i {
-    width: 30px;
-    color: var(--primary-color);
+/* تصغير الخط في الحقوق المحفوظة */
+footer hr {
+    margin: 15px 0; /* تقليل المسافة حول الخط الفاصل */
+    opacity: 0.1;
 }
 
-/* شكل النشرة البريدية الصغير */
-.footer-newsletter .form-control {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: white;
-    border-radius: 25px 0 0 25px;
-}
-
-.footer-newsletter .btn {
-    border-radius: 0 25px 25px 0;
-    background-color: var(--primary-color);
-    border: none;
+.copyright-text {
+    font-size: 0.8rem;
 }
         :root {
             --primary-color: #A7D7C5;
