@@ -9,266 +9,136 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        .navbar-brand img {
-    /* إذا كان الشعار يحتاج لفلتر ليصبح أبيض أو فاتح */
-    /* filter: brightness(0) invert(1); */ 
-    transition: 0.3s;
-}
-        /* تحسينات قسم الأكاديميات */
-.tab-pane {
-    transition: opacity 0.4s ease-in-out;
-}
-
-.academy-icon {
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    margin-bottom: 15px;
-}
-
-.academy-list {
-    list-style: none;
-    padding: 0;
-}
-
-.academy-list li {
-    padding: 8px 0;
-    border-bottom: 1px dashed #eee;
-}
-
-.academy-list li i {
-    color: var(--primary-color);
-    margin-left: 10px;
-}
-
-.btn-register-small {
-    background-color: var(--navy-color);
-    color: white;
-    border-radius: 20px;
-    padding: 5px 20px;
-    font-size: 0.9rem;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 15px;
-    transition: 0.3s;
-}
-
-.btn-register-small:hover {
-    background-color: var(--accent-color);
-    color: var(--navy-color);
-}
-        /* --- التعديل الجديد الخاص بقسم نبذة عنا --- */
-    /* --- التعديل المطور لقسم نبذة عنا (لون متناسق وسمك دقيق) --- */
-.about-img-container {
-    position: relative;
-    display: inline-block;
-    padding: 20px; /* زيادة الحشوة قليلاً لظهور الإطار بوضوح */
-}
-
-/* الإطار الخلفي (البرتقالي) */
-/* الإطار الخلفي - تم تغيير اللون إلى الأزرق */
-.about-img-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* تم التغيير هنا من var(--accent-color) إلى var(--navy-color) */
-    background-color: var(--navy-color); 
-    border-radius: 40px; 
-    z-index: 1;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.about-img-container img {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 380px; /* حجم أصغر قليلاً لمزيد من الأناقة */
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 30px; /* زوايا دائرية متناسقة */
-    
-    /* --- تغيير اللون والسمك هنا (اختر خيارك) --- */
-    border: 2px solid #FFFFFF; /* الخيار الثاني: إطار أبيض رفيع */
-    /* يمكنك استبداله بـ: border: 2px solid #D4AF37; للذهبي */
-    /* أو: border: 2px solid var(--primary-color); للأخضر */
-    /* ----------------------------------------------- */
-    
-    transition: transform 0.3s ease;
-}
-
-/* تأثير بسيط عند تمرير الماوس */
-.about-img-container:hover img {
-    transform: scale(1.02); /* حركة خفيفة جداً */
-}
-/* --- نهاية تعديل قسم نبذة عنا --- */
-
-        /* الإطار الخلفي (البرتقالي) بزوايا دائرية (أقواس) */
-    
-
-        /* تأثير بسيط عند تمرير الماوس */
-        .about-img-container:hover img {
-            transform: scale(1.03);
-        }
-        /* --- نهاية تعديل قسم نبذة عنا --- */
-        /* تحسينات الفوتر */
-     /* تطوير الفوتر ليصبح أكثر احترافية */
-footer {
-    background: linear-gradient(135deg, var(--navy-color) 0%, #0d1a2b 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-/* إضافة خط علوي ملون */
-footer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(to left, var(--primary-color), var(--accent-color));
-}
-
-footer h5 {
-    color: var(--accent-color);
-    font-weight: 700;
-    margin-bottom: 25px;
-    position: relative;
-}
-
-footer h5::after {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    right: 0;
-    width: 30px;
-    height: 2px;
-    background-color: var(--primary-color);
-}
-
-footer .list-unstyled li {
-    margin-bottom: 12px;
-}
-
-footer .list-unstyled li a {
-    color: rgba(255, 255, 255, 0.8) !important;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-footer .list-unstyled li a:hover {
-    color: var(--accent-color) !important;
-    transform: translateX(-5px); /* حركة لليسار لأن الاتجاه RTL */
-    padding-right: 5px;
-}
-
-.social-icons a {
-    width: 38px;
-    height: 38px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px; /* زوايا مستديرة ناعمة بدلاً من الدائرة الكاملة */
-    margin-left: 8px;
-    transition: 0.4s;
-    color: white;
-    text-decoration: none;
-}
-
-.social-icons a:hover {
-    background: var(--accent-color);
-    color: var(--navy-color) !important;
-    transform: translateY(-5px) rotate(8deg);
-}
-
-.contact-info-box i {
-    width: 30px;
-    color: var(--primary-color);
-}
-
-/* شكل النشرة البريدية الصغير */
-.footer-newsletter .form-control {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: white;
-    border-radius: 25px 0 0 25px;
-}
-
-.footer-newsletter .btn {
-    border-radius: 0 25px 25px 0;
-    background-color: var(--primary-color);
-    border: none;
-}
         :root {
             --primary-color: #A7D7C5;
             --accent-color: #FFB347; 
             --navy-color: #1A2F4B;   
-            --bg-light: #F8F9FA;
+            --bg-overlay: rgba(255, 255, 255, 0.92); /* طبقة حماية للنصوص */
         }
 
         body {
             font-family: 'Cairo', sans-serif;
             color: var(--navy-color);
-            background-color: #FFFFFF;
+            /* إضافة الصورة كخلفية للموقع بالكامل */
+            background-image: url('https://i.postimg.cc/HnPQRPZF/OIP-(6).jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* تجعل الخلفية ثابتة أثناء التمرير */
+            background-repeat: no-repeat;
         }
 
-        /* إخفاء الأقسام افتراضياً */
-        section { display: none; padding: 60px 0; }
-        #home { display: block; } /* إظهار الرئيسية فقط */
+        /* تنسيق الأقسام لتبرز فوق الخلفية */
+        section { 
+            display: none; 
+            padding: 80px 0; 
+            min-height: 80vh;
+        }
 
-        /* تعديل شريط التنقل للون الأزرق */
-.navbar { 
-    background-color: var(--navy-color) !important; /* استخدام الأزرق الداكن المعرف في الروت */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
-    padding: 10px 0;
-}
+        /* إضافة حاوية بيضاء شفافة داخل كل قسم لضمان وضوح المحتوى */
+        section .container {
+            background-color: var(--bg-overlay);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
 
-/* تغيير لون النصوص في النافبار للأبيض لتناسب الخلفية الزرقاء */
-.navbar .nav-link { 
-    color: #ffffff !important; 
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-/* تأثير عند تمرير الماوس على الروابط */
-.navbar .nav-link:hover { 
-    color: var(--accent-color) !important; 
-}
-
-/* تعديل لون أيقونة الموبايل (الهمبرجر) لتظهر باللون الأبيض */
-.navbar-toggler {
-    border-color: rgba(255,255,255,0.5);
-}
-.navbar-toggler-icon {
-    filter: brightness(0) invert(1);
-}
+        #home { display: block; }
         
+        /* تعطيل حاوية الـ home الأصلية لأن الـ Hero يأخذ تنسيقاً خاصاً */
+        #home .hero-section .container {
+            background-color: rgba(26, 47, 75, 0.85); /* خلفية داكنة للنص الترحيبي */
+            color: white;
+            border-radius: 20px;
+            padding: 50px;
+        }
 
-        .highlight-card { border: none; background: var(--bg-light); transition: 0.3s; border-bottom: 4px solid var(--primary-color); }
-        .highlight-card:hover { transform: translateY(-5px); }
+        .navbar { 
+            background-color: var(--navy-color) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+        }
 
-        .section-title { margin-bottom: 40px; position: relative; padding-bottom: 15px; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; right: 0; width: 50px; height: 3px; background-color: var(--accent-color); }
+        .navbar .nav-link { color: #ffffff !important; }
+        .navbar .nav-link:hover { color: var(--accent-color) !important; }
 
-        .nav-pills .nav-link.active { background-color: var(--primary-color); color: var(--navy-color); }
+        .btn-cta {
+            background-color: var(--accent-color);
+            color: var(--navy-color);
+            font-weight: bold;
+            border-radius: 25px;
+            padding: 10px 25px;
+            transition: 0.3s;
+        }
+
+        .btn-cta:hover {
+            background-color: white;
+            transform: scale(1.05);
+        }
+
+        .highlight-card { 
+            border: none; 
+            background: #ffffff; 
+            transition: 0.3s; 
+            border-bottom: 4px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .section-title { 
+            margin-bottom: 40px; 
+            position: relative; 
+            padding-bottom: 15px; 
+            font-weight: 700;
+        }
+
+        .section-title::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: 0; 
+            right: 0; 
+            width: 50px; 
+            height: 3px; 
+            background-color: var(--accent-color); 
+        }
+
+        .about-img-container {
+            position: relative;
+            display: inline-block;
+            padding: 15px;
+        }
+
+        .about-img-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: var(--navy-color); 
+            border-radius: 40px; 
+            z-index: 1;
+        }
+
+        .about-img-container img {
+            position: relative;
+            z-index: 2;
+            border-radius: 30px;
+            border: 3px solid white;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--navy-color) 0%, #0d1a2b 100%);
+            margin-top: 50px;
+        }
 
         .wa-float {
             position: fixed; bottom: 20px; left: 20px; background-color: #25d366; color: white;
             width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
+        <div class="container-fluid px-lg-5">
             <a class="navbar-brand" href="#">
-                <img src="https://i.postimg.cc/3xCKbZpQ/Gemini-Generated-Image-nl0ldenl0ldenl0l.png" alt="الشعار" height="50"> 
+                <img src="https://i.postimg.cc/3xCKbZpQ/Gemini-Generated-Image-nl0ldenl0ldenl0l.png" alt="الشعار" height="50" style="filter: brightness(0) invert(1);"> 
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -287,14 +157,14 @@ footer .list-unstyled li a:hover {
     </nav>
 
     <section id="home">
-        <div class="hero-section mb-5">
+        <div class="hero-section text-center mb-5">
             <div class="container">
                 <h1 class="display-4 fw-bold">أهلاً بكم في بيتك الثاني</h1>
                 <p class="lead">بيئة تعليمية دافئة تهدف لبناء جيل مبدع ومثقف.</p>
-                <a href="#admissions" class="btn btn-cta btn-lg">ابدأ رحلة طفلك اليوم</a>
+                <a href="#admissions" class="btn btn-cta btn-lg mt-3">ابدأ رحلة طفلك اليوم</a>
             </div>
         </div>
-        <div class="container">
+        <div class="container mt-4">
             <div class="row g-4 text-center">
                 <div class="col-md-4">
                     <div class="card highlight-card p-4">
@@ -319,256 +189,94 @@ footer .list-unstyled li a:hover {
                 </div>
             </div>
         </div>
-  </section>
-   <section id="academics">
-    <div class="container">
-        <h2 class="section-title text-center">البرامج الأكاديمية</h2>
-        
-        <ul class="nav nav-pills mb-5 justify-content-center" id="pills-tab" role="tablist">
-            <li class="nav-item">
-                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab1">LKG/UKG</button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab2">Grades 1-3</button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab3">Grades 4-5</button>
-            </li>
-        </ul>
+    </section>
 
-        <div class="tab-content bg-white p-4 p-md-5 rounded shadow-sm border-top border-4 border-primary">
-            
-            <div class="tab-pane fade show active" id="tab1">
-                <div class="row align-items-center">
-                    <div class="col-md-8 text-md-end">
-                        <div class="academy-icon"><i class="fas fa-palette"></i></div>
-                        <h3 class="fw-bold mb-3">برنامج التأسيس الإبداعي</h3>
-                        <p class="lead">"نركز في هذه المرحلة على التعلم من خلال اللعب والاكتشاف. نهدف إلى تنمية مهارات الطفل الحركية والاجتماعية، مع تأسيس قوي في اللغة العربية والإنجليزية ومبادئ الحساب بأساليب تفاعلية تجعل الطفل يحب المدرسة."</p>
-                        <ul class="academy-list mb-4">
-                            <li><i class="fas fa-check-circle"></i> تنمية المهارات اللغوية والذكاء العاطفي.</li>
-                            <li><i class="fas fa-check-circle"></i> بيئة تعليمية مرحة وآمنة.</li>
-                            <li><i class="fas fa-check-circle"></i> أنشطة ترفيهية ورياضية يومية.</li>
-                        </ul>
-                        <a href="#admissions" class="btn-register-small">سجل الآن في هذا البرنامج</a>
-                    </div>
-                    <div class="col-md-4 mt-4 mt-md-0">
-                        <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-4 shadow" alt="Kindergarten">
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade" id="tab2">
-                <div class="row align-items-center">
-                    <div class="col-md-8 text-md-end">
-                        <div class="academy-icon"><i class="fas fa-book-open"></i></div>
-                        <h3 class="fw-bold mb-3">مرحلة البناء المعرفي</h3>
-                        <p class="lead">"نضع حجر الأساس للتميز الدراسي عبر منهج متكامل يركز على القراءة، الكتابة، والرياضيات. نستخدم تقنيات التعليم النشط لتعزيز الفضول العلمي لدى الطلاب وتدريبهم على مهارات التفكير المنطقي."</p>
-                        <ul class="academy-list mb-4">
-                            <li><i class="fas fa-check-circle"></i> منهج لغوي مكثف (عربي/إنجليزي).</li>
-                            <li><i class="fas fa-check-circle"></i> مبادئ العلوم والحساب الذهني.</li>
-                            <li><i class="fas fa-check-circle"></i> استخدام الوسائل التقنية في التعليم.</li>
-                        </ul>
-                        <a href="#admissions" class="btn-register-small">سجل الآن في هذا البرنامج</a>
-                    </div>
-                    <div class="col-md-4 mt-4 mt-md-0">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-4 shadow" alt="Primary School">
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade" id="tab3">
-                <div class="row align-items-center">
-                    <div class="col-md-8 text-md-end">
-                        <div class="academy-icon"><i class="fas fa-microscope"></i></div>
-                        <h3 class="fw-bold mb-3">مرحلة التمكين والبحث العلمي</h3>
-                        <p class="lead">"ننتقل بالطلاب من مرحلة التلقي إلى مرحلة البحث والتحليل. يتم تشجيع الطلاب على تنفيذ المشاريع العلمية، العمل الجماعي، وحل المشكلات المعقدة، مما يؤهلهم لمواجهة التحديات الدراسية المستقبلية بثقة."</p>
-                        <ul class="academy-list mb-4">
-                            <li><i class="fas fa-check-circle"></i> تطوير مهارات البحث العلمي والعرض التقديمي.</li>
-                            <li><i class="fas fa-check-circle"></i> تعزيز القيم القيادية والاعتماد على النفس.</li>
-                            <li><i class="fas fa-check-circle"></i> مسابقات أكاديمية وأنشطة تقنية متقدمة.</li>
-                        </ul>
-                        <a href="#admissions" class="btn-register-small">سجل الآن في هذا البرنامج</a>
-                    </div>
-                    <div class="col-md-4 mt-4 mt-md-0">
-                        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-4 shadow" alt="Advanced Primary">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-     <section id="about">
-    <div class="container">
-        <div class="row align-items-center">
-            
-            <div class="col-md-6 mb-4 mb-md-0 text-md-end">
-                <h2 class="section-title">نبذة عن مدرستنا</h2>
-                <p class="lead text-muted">
-                    نحن مؤسسة تعليمية رائدة تهدف إلى تقديم تعليم عالي الجودة في بيئة محفزة وآمنة. نركز على تنمية مهارات الطالب الفكرية، الاجتماعية، والبدنية ليكون قادراً على مواجهة تحديات المستقبل والمساهمة بفعالية في مجتمعه.
-                </p>
-                <div class="p-3 border-end border-4 border-primary bg-white shadow-sm mb-4">
-                    <h6 class="fw-bold" style="color: var(--navy-color);">"رسالتنا هي إعداد قادة الغد في بيئة ملهمة"</h6>
-                    <small class="text-secondary">- مدير المدرسة</small>
-                </div>
-            </div>
-
-            <div class="col-md-6 text-center">
-                <div class="about-img-container">
-                    <img src="https://i.postimg.cc/hP7ygDSm/OIP-(5).jpg" alt="عن المدرسة" class="img-fluid">
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</section>
-   
-
-    <section id="academics">
+    <section id="about">
         <div class="container">
-            <h2 class="section-title">البرامج الأكاديمية</h2>
-            <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
-                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab1">LKG/UKG</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab2">Grades 1-3</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab3">Grades 4-5</button></li>
-            </ul>
-            <div class="tab-content border p-4 rounded shadow-sm">
-                <div class="tab-pane fade show active" id="tab1">
-                    <h4>منهج رياض الأطفال</h4>
-                    <p>نركز على التعليم باللعب وتنمية المهارات الحركية والاجتماعية.</p>
+            <div class="row align-items-center">
+                <div class="col-md-6 text-md-end">
+                    <h2 class="section-title">نبذة عن مدرستنا</h2>
+                    <p class="lead text-muted">
+                        نحن مؤسسة تعليمية رائدة تهدف إلى تقديم تعليم عالي الجودة في بيئة محفزة وآمنة. نركز على تنمية مهارات الطالب الفكرية، الاجتماعية، والبدنية.
+                    </p>
+                    <div class="p-3 border-end border-4 border-primary bg-light shadow-sm mb-4">
+                        <h6 class="fw-bold">"رسالتنا هي إعداد قادة الغد في بيئة ملهمة"</h6>
+                        <small class="text-secondary">- مدير المدرسة</small>
+                    </div>
                 </div>
-                <div class="tab-pane fade" id="tab2">
-                    <h4>المرحلة الابتدائية الدنيا</h4>
-                    <p>تأسيس قوي في اللغات والرياضيات والعلوم بأسلوب تفاعلي.</p>
-                </div>
-                <div class="tab-pane fade" id="tab3">
-                    <h4>المرحلة الابتدائية العليا</h4>
-                    <p>تطوير مهارات التفكير النقدي والبحث العلمي.</p>
+                <div class="col-md-6 text-center">
+                    <div class="about-img-container">
+                        <img src="https://i.postimg.cc/hP7ygDSm/OIP-(5).jpg" alt="عن المدرسة" class="img-fluid" style="max-width: 350px;">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="admissions" style="background-color: #f0f7f4;">
+    <section id="academics">
         <div class="container">
-            <h2 class="section-title text-center">خطوات القبول</h2>
-            <div class="row text-center mb-5">
-                <div class="col-md-4"><div class="p-3 bg-white shadow-sm rounded mb-2">1. تعبئة النموذج الإلكتروني</div></div>
-                <div class="col-md-4"><div class="p-3 bg-white shadow-sm rounded mb-2">2. المقابلة الشخصية</div></div>
-                <div class="col-md-4"><div class="p-3 bg-white shadow-sm rounded mb-2">3. تسليم المستندات</div></div>
-            </div>
-            <div class="row">
-                <div class="col-md-7">
-                    <h4>جدول الرسوم</h4>
-                    <table class="table table-bordered bg-white">
-                        <thead class="table-dark">
-                            <tr><th>المرحلة</th><th>الرسوم السنوية</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>رياض الأطفال</td><td>0000 ريال</td></tr>
-                            <tr><td>الابتدائي</td><td>0000 ريال</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-5">
-                    <div class="card p-4 shadow border-0">
-                        <h5>استفسار سريع</h5>
-                        <form>
-                            <input type="text" class="form-control mb-2" placeholder="الاسم الكامل">
-                            <input type="tel" class="form-control mb-2" placeholder="رقم الهاتف">
-                            <select class="form-select mb-3">
-                                <option>المرحلة المهتم بها</option>
-                                <option>تمهيدي</option>
-                                <option>ابتدائي</option>
-                            </select>
-                            <button type="button" class="btn btn-cta w-100">إرسال عبر واتساب <i class="fab fa-whatsapp"></i></button>
-                        </form>
-                    </div>
+            <h2 class="section-title text-center">البرامج الأكاديمية</h2>
+            <div class="tab-content bg-white p-4 rounded shadow-sm">
+                <div class="text-center">
+                    <h4>نقدم مناهج تعليمية متطورة</h4>
+                    <p>من رياض الأطفال وحتى المرحلة الابتدائية العليا، نضمن لطفلكم تعليماً يواكب العصر.</p>
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-4 mt-3" alt="التعليم">
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="text-white pt-5 pb-3">
-    <div class="container text-md-start">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <h5><i class="fas fa-graduation-cap me-2"></i> اسم المدرسة</h5>
-                <p class="small text-light">مدرسة متميزة تسعى لخلق بيئة تعليمية محفزة للإبداع، نؤمن بأن التعليم هو المفتاح لبناء مستقبل مشرق لأطفالنا.</p>
-                <div class="contact-info small text-light">
-                    <p class="mb-1"><i class="fas fa-map-marker-alt text-primary me-2"></i> العنوان: المدينة، الحي، الشارع</p>
-                    <p class="mb-1"><i class="fas fa-phone text-primary me-2"></i> 966XXXXXXXX+</p>
+        <div class="container bg-transparent shadow-none">
+            <div class="row">
+                <div class="col-md-4 mb-4 text-md-end">
+                    <h5><i class="fas fa-graduation-cap me-2"></i> اسم المدرسة</h5>
+                    <p class="small">مدرسة متميزة تسعى لخلق بيئة تعليمية محفزة للإبداع وبناء مستقبل مشرق.</p>
+                </div>
+                <div class="col-md-4 mb-4 text-center">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white text-decoration-none">الرئيسية</a></li>
+                        <li><a href="#about" class="text-white text-decoration-none">نبذة عنا</a></li>
+                        <li><a href="#admissions" class="text-white text-decoration-none">القبول والتسجيل</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 text-center">
+                    <h5>تابعنا على</h5>
+                    <div class="social-icons fs-5">
+                        <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-md-4 mb-4 text-center">
-                <h5>روابط سريعة</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#home" class="text-white text-decoration-none nav-link p-0 d-inline">الرئيسية</a></li>
-                    <li><a href="#about" class="text-white text-decoration-none nav-link p-0 d-inline">نبذة عنا</a></li>
-                    <li><a href="#admissions" class="text-white text-decoration-none nav-link p-0 d-inline">القبول والتسجيل</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">الأسئلة الشائعة</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-4 mb-4 text-center">
-                <h5>تابعنا على</h5>
-                <div class="social-icons fs-5">
-                    <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-snapchat-ghost"></i></a>
-                </div>
-                <div class="mt-4">
-                    <img src="https://i.postimg.cc/3xCKbZpQ/Gemini-Generated-Image-nl0ldenl0ldenl0l.png" alt="شعار صغير" height="40" style="filter: brightness(0) invert(1);">
-                </div>
+            <hr>
+            <div class="text-center">
+                <p class="small mb-0">جميع الحقوق محفوظة &copy; 2026 - اسم المدرسة</p>
             </div>
         </div>
-        <hr class="bg-light">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <p class="small mb-0">جميع الحقوق محفوظة &copy; 2026 - <strong>اسم المدرسة</strong></p>
-            </div>
-        </div>
-    </div>
-</footer>
-    <a href="https://wa.me/رقمك" class="wa-float">
+    </footer>
+
+    <a href="https://wa.me/966XXXXXXXX" class="wa-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // استهداف جميع روابط النافبار وأي زر يحمل كلاس btn-cta وله href يبدأ بـ #
             const navLinks = document.querySelectorAll('.nav-link, a.btn-cta[href^="#"]');
-
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     const targetId = this.getAttribute('href');
-
                     if (targetId.startsWith('#')) {
                         e.preventDefault();
-
-                        // 1. إخفاء جميع الأقسام
                         document.querySelectorAll('section').forEach(section => {
                             section.style.display = 'none';
                         });
-
-                        // 2. إظهار القسم المطلوب
                         const targetSection = document.querySelector(targetId);
                         if (targetSection) {
                             targetSection.style.display = 'block';
-                            
-                            // 3. العودة للأعلى
                             window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }
-
-                        // 4. إغلاق قائمة الموبايل
-                        const navbarCollapse = document.querySelector('.navbar-collapse');
-                        if (navbarCollapse.classList.contains('show')) {
-                            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
-                            bsCollapse.hide();
                         }
                     }
                 });
