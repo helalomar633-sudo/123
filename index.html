@@ -3,139 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أكاديمية التميز التعليمية | الصفحة الرئيسية</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <title>اسم المدرسة | تعليم وبناء</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --primary-color: #A7D7C5; /* Mint Green */
+            --accent-color: #FFB347;  /* Warm Orange/Yellow */
+            --navy-color: #1A2F4B;    /* Deep Navy */
+            --bg-light: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            color: var(--navy-color);
+            background-color: #FFFFFF;
+        }
+
+        /* 1. Header & Navigation */
+        .navbar {
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-link {
+            color: var(--navy-color) !important;
+            font-weight: 600;
+        }
+        .btn-cta {
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 25px;
+            padding: 8px 25px;
+            font-weight: bold;
+            border: none;
+        }
+        .btn-cta:hover {
+            background-color: #e6a13d;
+            color: white;
+        }
+
+        /* 2. Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(167, 215, 197, 0.8), rgba(167, 215, 197, 0.8)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        /* 3. Highlights */
+        .highlight-card {
+            border: none;
+            background: var(--bg-light);
+            transition: 0.3s;
+            border-bottom: 4px solid var(--primary-color);
+        }
+        .highlight-card:hover { transform: translateY(-5px); }
+
+        /* 4. Sections Styling */
+        section { padding: 60px 0; }
+        .section-title { margin-bottom: 40px; position: relative; padding-bottom: 15px; }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        /* 5. Tabs for Academics */
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+            color: var(--navy-color);
+        }
+
+        /* 6. Contact & Floating WA */
+        .wa-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            z-index: 1000;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="container flex-between">
-            <div class="logo">
-                <img src="logo.png" alt="الشعار">
-                <span>اسم المدرسة</span>
-            </div>
-            <nav class="nav-links">
-                <a href="#" class="active">الرئيسية</a>
-                <a href="#about">نبذة عنا</a>
-                <a href="#academics">الأكاديميات</a>
-                <a href="#admissions">القبول</a>
-                <a href="#facilities">المرافق</a>
-                <a href="#contact">اتصل بنا</a>
-            </nav>
-            <div class="cta-header">
-                <a href="#" class="btn btn-warm">قدم الآن</a>
-            </div>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-overlay">
-            <div class="container text-center">
-                <h1>نصنع مستقبلاً مبدعاً لأبنائكم</h1>
-                <p>بيئة تعليمية متطورة تدمج بين القيم والأصالة والابتكار التكنولوجي.</p>
-                <div class="hero-btns">
-                    <a href="#" class="btn btn-warm btn-lg">ابدأ رحلة التقديم</a>
-                    <a href="#" class="btn btn-outline btn-lg">استكشف مرافقنا</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="highlights section-padding">
-        <div class="container grid-3">
-            <div class="card-highlight">
-                <i class="fas fa-shield-alt"></i>
-                <h3>بيئة آمنة</h3>
-                <p>نظام حماية متكامل ورعاية شاملة لكل طالب.</p>
-            </div>
-            <div class="card-highlight">
-                <i class="fas fa-laptop-code"></i>
-                <h3>تعليم تفاعلي</h3>
-                <p>استخدام أحدث الوسائل التكنولوجية في الفصول.</p>
-            </div>
-            <div class="card-highlight">
-                <i class="fas fa-user-graduate"></i>
-                <h3>اهتمام فردي</h3>
-                <p>برامج مخصصة لتطوير مهارات كل طفل على حدة.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about-snippet section-padding bg-light">
-        <div class="container grid-2">
-            <div class="about-text">
-                <span class="badge">عن المدرسة</span>
-                <h2>صرح تعليمي رائد</h2>
-                <p>تأسست مدرستنا لتكون منارة للعلم، حيث نجمع بين المناهج العالمية والقيم الراسخة لتنشئة جيل قادر على مواجهة تحديات المستقبل بكل ثقة وإبداع.</p>
-                <a href="about.html" class="link-more">اقرأ المزيد عن تاريخنا <i class="fas fa-arrow-left"></i></a>
-            </div>
-            <div class="about-img">
-                <img src="school-building.jpg" alt="مبنى المدرسة">
-            </div>
-        </div>
-    </section>
-
-    <section class="quick-access section-padding">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <div class="grid-3">
-                <a href="#" class="quick-btn"><i class="fas fa-file-invoice-dollar"></i> جدول الرسوم</a>
-                <a href="#" class="quick-btn"><i class="fas fa-folder-open"></i> قائمة المستندات</a>
-                <a href="#" class="quick-btn"><i class="fas fa-map-marker-alt"></i> موقعنا الجغرافي</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials section-padding bg-dark text-white">
-        <div class="container text-center">
-            <h2>ماذا يقول أولياء الأمور؟</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial-card">
-                    <p>"أفضل استثمار قمت به لأولادي هو تسجيلهم في هذه المدرسة، التطور ملموس في شخصياتهم."</p>
-                    <h4>أ. محمد أحمد</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container grid-4">
-            <div class="footer-info">
-                <h3>اسم المدرسة</h3>
-                <p>تعليم متميز.. لمستقبل أفضل.</p>
-            </div>
-            <div class="footer-links">
-                <h4>روابط سريعة</h4>
-                <ul>
-                    <li><a href="#">التقويم الدراسي</a></li>
-                    <li><a href="#">بوابة الطالب</a></li>
-                    <li><a href="#">الوظائف</a></li>
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="الشعار" height="50"> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">نبذة عنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#academics">الأكاديميات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#admissions">القبول</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#facilities">المرافق</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></li>
                 </ul>
+                <a href="#admissions" class="btn btn-cta ms-lg-3">قدم الآن</a>
             </div>
-            <div class="footer-contact">
-                <h4>تواصل معنا</h4>
-                <p><i class="fas fa-phone"></i> +966 500 000 000</p>
-                <p><i class="fas fa-envelope"></i> info@school.com</p>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">أهلاً بكم في بيتك الثاني</h1>
+            <p class="lead">بيئة تعليمية دافئة تهدف لبناء جيل مبدع ومثقف.</p>
+            <a href="#admissions" class="btn btn-cta btn-lg">ابدأ رحلة طفلك اليوم</a>
+        </div>
+    </section>
+
+    <div class="container py-5">
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="card highlight-card p-4">
+                    <i class="fas fa-shield-alt fa-3x mb-3 text-success"></i>
+                    <h4>بيئة آمنة</h4>
+                    <p>أعلى معايير السلامة والرعاية لأطفالكم.</p>
+                </div>
             </div>
-            <div class="footer-social">
-                <h4>تابعنا</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="col-md-4">
+                <div class="card highlight-card p-4">
+                    <i class="fas fa-lightbulb fa-3x mb-3 text-warning"></i>
+                    <h4>تعليم تفاعلي</h4>
+                    <p>أساليب حديثة تعتمد على المشاركة والتجربة.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card highlight-card p-4">
+                    <i class="fas fa-heart fa-3x mb-3 text-danger"></i>
+                    <h4>اهتمام فردي</h4>
+                    <p>نركز على مهارات كل طفل بشكل مستقل.</p>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom text-center">
-            <p>جميع الحقوق محفوظة © 2026 - تصميم وتطوير <strong>OM ZONE</strong></p>
+    </div>
+
+    <section id="about" class="bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="section-title">نبذة عن مدرستنا</h2>
+                    <p>هنا نكتب نصاً بسيطاً يوضح رؤية المدرسة وتاريخها في تقديم جودة تعليمية متميزة...</p>
+                    <div class="p-3 border-end border-4 border-primary bg-white shadow-sm mb-4">
+                        <h6>"رسالتنا هي إعداد قادة الغد في بيئة ملهمة"</h6>
+                        <small>- مدير المدرسة</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=600" class="img-fluid rounded shadow" alt="المبنى">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="academics">
+        <div class="container">
+            <h2 class="section-title">البرامج الأكاديمية</h2>
+            <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
+                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab1">LKG/UKG</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab2">Grades 1-3</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab3">Grades 4-5</button></li>
+            </ul>
+            <div class="tab-content border p-4 rounded shadow-sm">
+                <div class="tab-pane fade show active" id="tab1">
+                    <h4>منهج رياض الأطفال</h4>
+                    <p>نركز على التعليم باللعب وتنمية المهارات الحركية والاجتماعية.</p>
+                </div>
+                <div class="tab-pane fade" id="tab2">
+                    <h4>المرحلة الابتدائية الدنيا</h4>
+                    <p>تأسيس قوي في اللغات والرياضيات والعلوم بأسلوب تفاعلي.</p>
+                </div>
+                <div class="tab-pane fade" id="tab3">
+                    <h4>المرحلة الابتدائية العليا</h4>
+                    <p>تطوير مهارات التفكير النقدي والبحث العلمي.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="admissions" style="background-color: #f0f7f4;">
+        <div class="container">
+            <h2 class="section-title text-center">خطوات القبول</h2>
+            <div class="row text-center mb-5">
+                <div class="col-md-4"><div class="p-3 bg-white shadow-sm rounded">1. تعبئة النموذج الإلكتروني</div></div>
+                <div class="col-md-4"><div class="p-3 bg-white shadow-sm rounded">2. المقابلة الشخصية</div></div>
+                <div class="col-md-4"><div class="p-3 bg-white shadow-sm rounded">3. تسليم المستندات</div></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-7">
+                    <h4>جدول الرسوم والمستندات</h4>
+                    <table class="table table-bordered bg-white">
+                        <thead class="table-dark">
+                            <tr><th>المرحلة</th><th>الرسوم السنوية</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>رياض الأطفال</td><td>0000 ريال</td></tr>
+                            <tr><td>الابتدائي</td><td>0000 ريال</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-5">
+                    <div class="card p-4 shadow border-0">
+                        <h5>استفسار سريع</h5>
+                        <form>
+                            <input type="text" class="form-control mb-2" placeholder="الاسم الكامل">
+                            <input type="tel" class="form-control mb-2" placeholder="رقم الهاتف">
+                            <select class="form-select mb-3">
+                                <option>المرحلة المهتم بها</option>
+                                <option>تمهيدي</option>
+                                <option>ابتدائي</option>
+                            </select>
+                            <button class="btn btn-cta w-100">إرسال عبر واتساب <i class="fab fa-whatsapp"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>عن المدرسة</h5>
+                    <p class="small">مدرسة متميزة تسعى لخلق بيئة تعليمية محفزة للإبداع.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">سياسة الخصوصية</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 text-center">
+                    <h5>تابعنا</h5>
+                    <div class="fs-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">جميع الحقوق محفوظة &copy; 2024 - اسم المدرسة</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/yournumber" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/رقمك" class="wa-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
