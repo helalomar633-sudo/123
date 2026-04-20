@@ -3,47 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بيتك الثاني - مدرسة التميز</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>مدرستنا - بيتك الثاني</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #4a90e2;
-            --secondary: #f39c12;
-            --success: #2ecc71;
-            --text-dark: #2c3e50;
-            --bg-light: #f9f9f9;
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --glass-bg: rgba(255, 255, 255, 0.92);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Cairo', sans-serif;
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            background: url('https://i.postimg.cc/HnPQRPZF/OIP-(6).jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
             line-height: 1.6;
+        }
+
+        /* الطبقة الشفافة فوق الخلفية */
+        .overlay {
+            background: rgba(0, 0, 0, 0.4);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         /* القائمة العلوية */
         nav {
-            background: white;
+            background: var(--primary-color);
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .logo {
+            color: white;
             font-size: 1.5rem;
             font-weight: bold;
-            color: var(--primary);
         }
 
         nav ul {
@@ -56,261 +65,234 @@
         }
 
         nav ul li a {
+            color: white;
             text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 700;
+            font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
         }
 
         nav ul li a:hover {
-            color: var(--primary);
+            color: var(--accent-color);
         }
 
-        /* الأقسام - التحكم في الظهور والاختفاء */
-        .page-section {
+        /* الحاوية الرئيسية للمحتوى */
+        .container {
+            flex: 1;
+            padding: 40px 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section {
+            background: var(--glass-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 1000px;
             display: none; /* مخفي افتراضياً */
-            padding: 80px 10%;
             animation: fadeIn 0.5s ease-in;
         }
 
-        .active {
+        section.active {
             display: block; /* يظهر فقط القسم النشط */
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* تنسيق الهيرو (Home) */
-        #home {
-            text-align: center;
-            background: linear-gradient(rgba(74, 144, 226, 0.1), rgba(243, 156, 18, 0.1));
-        }
+        h2 { color: var(--primary-color); margin-bottom: 20px; border-right: 5px solid var(--accent-color); padding-right: 15px; }
+        p { margin-bottom: 15px; color: #444; }
 
-        .hero-title { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
-        
-        .cards-container {
+        /* البطاقات */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         .card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-bottom: 5px solid var(--primary);
-        }
-
-        /* تنسيق الأكاديميات */
-        .academic-level {
-            background: white;
-            margin-bottom: 30px;
-            padding: 25px;
+            background: #f9f9f9;
+            padding: 20px;
             border-radius: 10px;
-            border-right: 5px solid var(--secondary);
+            border-bottom: 4px solid var(--accent-color);
         }
 
-        /* نموذج التسجيل */
-        form {
-            max-width: 600px;
-            margin: 0 auto;
+        .card h3 { color: var(--accent-color); margin-bottom: 10px; }
+
+        /* الأكاديميات */
+        .academic-stage {
             background: white;
-            padding: 30px;
+            padding: 20px;
+            margin-bottom: 20px;
             border-radius: 10px;
         }
 
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+        /* الجداول والنماذج */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table td, table th { padding: 12px; border: 1px solid #ddd; text-align: center; }
+        table th { background: #eee; }
 
-        button {
-            background: var(--primary);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
+        form { display: flex; flex-direction: column; gap: 10px; }
+        input, select, textarea { padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
+        button { background: var(--accent-color); color: white; border: none; padding: 12px; cursor: pointer; font-weight: bold; border-radius: 5px; }
+        button:hover { background: #d35400; }
 
         footer {
-            background: #2c3e50;
+            background: var(--primary-color);
             color: white;
-            padding: 40px 10%;
             text-align: center;
-            margin-top: 50px;
+            padding: 20px;
+            margin-top: 40px;
         }
 
-        .social-links a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: center;
-        }
-
-        th { background-color: var(--primary); color: white; }
+        .social-links a { color: white; margin: 0 10px; text-decoration: none; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
+<div class="overlay">
     <nav>
-        <div class="logo">مدرسة بيتك الثاني</div>
+        <div class="logo">مدرستنا</div>
         <ul>
             <li><a onclick="showSection('home')">الرئيسية</a></li>
             <li><a onclick="showSection('about')">نبذة عنا</a></li>
             <li><a onclick="showSection('academics')">الأكاديميات</a></li>
-            <li><a onclick="showSection('admissions')">التسجيل</a></li>
+            <li><a onclick="showSection('admissions')">القبول</a></li>
             <li><a onclick="showSection('contact')">اتصل بنا</a></li>
         </ul>
     </nav>
 
-    <section id="home" class="page-section active">
-        <h1 class="hero-title">أهلاً بكم في بيتك الثاني</h1>
-        <p>بيئة تعليمية دافئة تهدف لبناء جيل مبدع ومثقف.</p>
+    <div class="container">
         
-        <div class="cards-container">
-            <div class="card">
-                <h3>🛡️ بيئة آمنة</h3>
-                <p>أعلى معايير السلامة والرعاية لأطفالكم.</p>
+        <section id="home" class="active">
+            <h1>أهلاً بكم في بيتك الثاني</h1>
+            <p>بيئة تعليمية دافئة تهدف لبناء جيل مبدع ومثقف.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>بيئة آمنة</h3>
+                    <p>أعلى معايير السلامة والرعاية لأطفالكم.</p>
+                </div>
+                <div class="card">
+                    <h3>تعليم تفاعلي</h3>
+                    <p>أساليب حديثة تعتمد على المشاركة والتجربة.</p>
+                </div>
+                <div class="card">
+                    <h3>اهتمام فردي</h3>
+                    <p>نركز على مهارات كل طفل بشكل مستقل.</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>💡 تعليم تفاعلي</h3>
-                <p>أساليب حديثة تعتمد على المشاركة والتجربة.</p>
+        </section>
+
+        <section id="about">
+            <h2>نبذة عن مدرستنا</h2>
+            <p>نحن مؤسسة تعليمية رائدة تهدف إلى تقديم تعليم عالي الجودة في بيئة محفزة وآمنة. نركز على تنمية مهارات الطالب الفكرية، الاجتماعية، والبدنية.</p>
+            <blockquote style="font-style: italic; background: #eee; padding: 15px; border-right: 5px solid var(--accent-color);">
+                "رسالتنا هي إعداد قادة الغد في بيئة ملهمة" - <strong>مدير المدرسة</strong>
+            </blockquote>
+        </section>
+
+        <section id="academics">
+            <h2>المراحل التعليمية</h2>
+            
+            <div class="academic-stage">
+                <h3>أ. برنامج التأسيس الإبداعي (LKG/UKG)</h3>
+                <p>التعلم من خلال اللعب والاكتشاف مع تأسيس قوي في اللغات والحساب.</p>
+                <ul>
+                    <li>تنمية المهارات اللغوية والذكاء العاطفي.</li>
+                    <li>أنشطة ترفيهية ورياضية يومية.</li>
+                </ul>
             </div>
-            <div class="card">
-                <h3>⭐ اهتمام فردي</h3>
-                <p>نركز على مهارات كل طفل بشكل مستقل.</p>
+
+            <div class="academic-stage">
+                <h3>ب. مرحلة البناء المعرفي (Grades 1-3)</h3>
+                <p>منهج متكامل يركز على القراءة، الكتابة، والرياضيات باستخدام التقنيات الحديثة.</p>
+                <ul>
+                    <li>منهج لغوي مكثف (عربي/إنجليزي).</li>
+                    <li>استخدام الوسائل التقنية في التعليم.</li>
+                </ul>
             </div>
-        </div>
-    </section>
 
-    <section id="about" class="page-section">
-        <h2>نبذة عن مدرستنا</h2>
-        <p style="font-size: 1.2rem; margin: 20px 0;">نحن مؤسسة تعليمية رائدة تهدف إلى تقديم تعليم عالي الجودة في بيئة محفزة وآمنة. نركز على تنمية مهارات الطالب الفكرية، الاجتماعية، والبدنية ليكون قادراً على مواجهة تحديات المستقبل والمساهمة بفعالية في مجتمعه.</p>
-        <blockquote style="background: #eee; padding: 20px; border-right: 5px solid var(--primary); font-style: italic;">
-            "رسالتنا هي إعداد قادة الغد في بيئة ملهمة" - مدير المدرسة
-        </blockquote>
-    </section>
-
-    <section id="academics" class="page-section">
-        <h2>المراحل التعليمية</h2>
-        
-        <div class="academic-level">
-            <h3>أ. برنامج التأسيس الإبداعي (LKG/UKG)</h3>
-            <p>التعلم من خلال اللعب والاكتشاف، تنمية المهارات الحركية، وتأسيس قوي في اللغات.</p>
-            <ul>
-                <li>تنمية الذكاء العاطفي.</li>
-                <li>أنشطة ترفيهية ورياضية يومية.</li>
-            </ul>
-        </div>
-
-        <div class="academic-level">
-            <h3>ب. مرحلة البناء المعرفي (Grades 1-3)</h3>
-            <p>حجر الأساس للتميز الدراسي عبر منهج متكامل وتقنيات التعليم النشط.</p>
-            <ul>
-                <li>منهج لغوي مكثف (عربي/إنجليزي).</li>
-                <li>مبادئ الحساب الذهني.</li>
-            </ul>
-        </div>
-
-        <div class="academic-level">
-            <h3>ج. مرحلة التمكين والبحث العلمي (Grades 4-5)</h3>
-            <p>الانتقال للبحث والتحليل والمشاريع العلمية والعمل الجماعي.</p>
-            <ul>
-                <li>تطوير مهارات العرض التقديمي.</li>
-                <li>مسابقات أكاديمية متقدمة.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="admissions" class="page-section">
-        <h2>القبول والتسجيل</h2>
-        <div class="cards-container">
-            <div class="card">
-                <h4>خطوات القبول</h4>
-                <ol style="text-align: right; padding-right: 20px;">
-                    <li>تعبئة النموذج الإلكتروني.</li>
-                    <li>المقابلة الشخصية.</li>
-                    <li>تسليم المستندات.</li>
-                </ol>
+            <div class="academic-stage">
+                <h3>ج. مرحلة التمكين والبحث العلمي (Grades 4-5)</h3>
+                <p>تشجيع الطلاب على البحث والتحليل وتنفيذ المشاريع العلمية.</p>
+                <ul>
+                    <li>تطوير مهارات البحث العلمي والعرض التقديمي.</li>
+                    <li>تعزيز القيم القيادية والاعتماد على النفس.</li>
+                </ul>
             </div>
-            <div class="card">
-                <h4>جدول الرسوم</h4>
-                <table>
-                    <tr><th>المرحلة</th><th>الرسوم</th></tr>
-                    <tr><td>رياض الأطفال</td><td>0000 ريال</td></tr>
-                    <tr><td>الابتدائي</td><td>0000 ريال</td></tr>
-                </table>
-            </div>
-        </div>
+        </section>
 
-        <h3 style="margin-top: 40px; text-align: center;">نموذج استفسار</h3>
-        <form>
-            <input type="text" placeholder="الاسم الكامل" required>
-            <input type="tel" placeholder="رقم الهاتف" required>
-            <select>
-                <option>اختر المرحلة المهتم بها</option>
-                <option>رياض الأطفال</option>
-                <option>المرحلة الابتدائية</option>
-            </select>
-            <button type="submit">إرسال الطلب</button>
-        </form>
-    </section>
+        <section id="admissions">
+            <h2>القبول والتسجيل</h2>
+            <h3>خطوات القبول:</h3>
+            <ol style="margin-right: 20px; margin-bottom: 20px;">
+                <li>تعبئة النموذج الإلكتروني.</li>
+                <li>المقابلة الشخصية.</li>
+                <li>تسليم المستندات.</li>
+            </ol>
 
-    <section id="contact" class="page-section">
-        <h2>اتصل بنا</h2>
-        <div style="text-align: center;">
-            <p>مدرسة متميزة تسعى لخلق بيئة تعليمية محفزة للإبداع.</p>
+            <h3>جدول الرسوم:</h3>
+            <table>
+                <tr><th>المرحلة</th><th>الرسوم</th></tr>
+                <tr><td>رياض الأطفال</td><td>0000 ريال</td></tr>
+                <tr><td>الابتدائي</td><td>0000 ريال</td></tr>
+            </table>
+
+            <h3>نموذج استفسار</h3>
+            <form>
+                <input type="text" placeholder="الاسم الكامل" required>
+                <input type="tel" placeholder="رقم الهاتف" required>
+                <select>
+                    <option>المرحلة المهتم بها</option>
+                    <option>تأسيس (LKG/UKG)</option>
+                    <option>ابتدائي (1-3)</option>
+                    <option>ابتدائي (4-5)</option>
+                </select>
+                <button type="submit">إرسال الطلب</button>
+            </form>
+        </section>
+
+        <section id="contact">
+            <h2>اتصل بنا</h2>
+            <p>مدرسة متميزة تسعى لخلق بيئة تعليمية محفزة للإبداع، نؤمن بأن التعليم هو المفتاح لبناء مستقبل مشرق لأطفالنا.</p>
             <div style="margin: 20px 0;">
-                <p>📍 العنوان: المدينة، الحي، الشارع</p>
-                <p>📞 الهاتف: +966XXXXXXXX</p>
+                <p><strong>📍 العنوان:</strong> المدينة، الحي، الشارع</p>
+                <p><strong>📞 الهاتف:</strong> +966XXXXXXXX</p>
             </div>
             <div class="social-links">
                 <a href="#">فيسبوك</a> | <a href="#">إنستغرام</a> | <a href="#">تويتر</a> | <a href="#">سناب شات</a>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </div>
 
     <footer>
-        <p>نؤمن بأن التعليم هو المفتاح لبناء مستقبل مشرق لأطفالنا.</p>
-        <p>جميع الحقوق محفوظة © 2026 - اسم المدرسة</p>
+        جميع الحقوق محفوظة © 2026 - اسم المدرسة
     </footer>
+</div>
 
-    <script>
-        function showSection(sectionId) {
-            // إخفاء جميع الأقسام
-            const sections = document.querySelectorAll('.page-section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
+<script>
+    function showSection(sectionId) {
+        // إخفاء جميع الأقسام
+        const sections = document.querySelectorAll('section');
+        sections.forEach(sec => {
+            sec.classList.remove('active');
+        });
 
-            // إظهار القسم المطلوب فقط
-            const activeSection = document.getElementById(sectionId);
-            activeSection.classList.add('active');
+        // إظهار القسم المطلوب فقط
+        const activeSection = document.getElementById(sectionId);
+        activeSection.classList.add('active');
 
-            // التمرير لأعلى الصفحة عند التبديل
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
+        // التمرير للأعلى عند التغيير
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
+
 </body>
 </html>
