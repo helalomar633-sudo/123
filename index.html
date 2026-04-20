@@ -10,26 +10,24 @@
     
     <style>
         /* تحسينات الفوتر */
-       footer {
-    background-color: var(--navy-color) !important; /* استخدام لون الهوية */
-         }
-        footer h5 {
-     color: var(--accent-color); /* لون العناوين في الفوتر */
-      font-weight: bold;
-    margin-bottom: 20px;
-    }
-    footer .list-unstyled li {
+     /* تحسينات الروابط في الفوتر */
+footer .list-unstyled li {
     margin-bottom: 10px;
-    }
-     footer .list-unstyled li a {
+    color: #FFFFFF !important; /* لضمان لون النقاط أو أي نص فرعي */
+}
+
+footer .list-unstyled li a {
     transition: 0.3s;
-    opacity: 0.8;
-    }
-    footer .list-unstyled li a:hover {
+    color: #FFFFFF !important; /* جعل الرابط أبيض صريح */
+    text-decoration: none;
+    opacity: 0.9; /* شفافية بسيطة تعطي لمسة جمالية */
+}
+
+footer .list-unstyled li a:hover {
     opacity: 1;
-    color: var(--primary-color) !important;
-    padding-right: 5px; /* حركة بسيطة لليمين */
-     }
+    color: var(--accent-color) !important; /* يتغير للون البرتقالي عند التمرير */
+    padding-right: 8px; /* حركة لليمين عند التمرير */
+}
                .social-icons a {
                display: inline-flex;
                 align-items: center;
